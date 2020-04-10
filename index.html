@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Prayer Request</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  .inner {
+				width:100%;
+				display:flex;
+				justify-content: center;
+				align-items:center;
+				}
+	.inner img{
+				display:block;
+				border-radius: 50%;
+				width: 150px;
+				height: 150px;
+				margin: 10px;
+			}
+  input {
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    margin-bottom: 20px;
+    border-radius: 25px 5px;
+    z-index: -1;
+  }
+  input + .shadow {
+    border-radius: 25px;
+  }
+  
+  textarea{
+    min-height: 200px;
+    border-radius: 25px;
+    padding: 12px 20px;
+
+    border-radius: 40px 5px;
+    z-index: -1;
+  }
+  textarea+ .shadow {
+    border-radius: 25px;
+  }
+  #content{ 
+    background-color: blueviolet;
+    background-repeat: repeat;
+  }
+  h2{
+    color:rgb(253, 250, 255);
+    font-weight: bolder;
+  }
+  .w3-input {
+    color: rgb(12, 1, 7);
+    font-size: medium;
+  }
+  .w3-padding-large {
+    padding: 0px !important;
+  }
+
+  .w3-button{
+    border-radius: 25px 5px;
+    border: 5px solid rgb(255, 12, 12);
+    color:rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-color: rgb(138, 12, 12);
+  }
+  form{
+    padding: 25px;
+  }
+  </style>
+  </head>
+  <body>
+		
+	<div class="wrapper d-flex align-items-stretch">
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+          <div class="inner">
+            <img src="logo1.png" alt="logo" style="float: left;
+            margin-bottom: 10px;" />
+          </div>
+          <div class="w3-container  w3-padding-32 w3-padding-large" id="contact">
+            <div class="w3-content" >
+              <h2 class="w3-center">Prayer Request<br /><span style="font-size: 1.5rem;">ప్రార్దన అవసరత కొరకు</span></h2>
+              <script type="text/javascript">var submitted=false;</script>
+              
+              <!--Update the URL for thank you page on form submit -->
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
+              onload="if(submitted) {window.location='thankyou.html';}"></iframe> 
+              
+              <!-- Update the Google forms URL in action-->
+              <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLScK-uI4_DAX3s9rBWIP7tbdpOg7gGS348mjODEgiimXKleewA/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+          
+                
+                <div>
+                  <input class="w3-input w3-border" type="text" placeholder="Name" id="name" required name="entry.121148193">
+                </div>
+                <div>
+                  <input class="w3-input w3-border" type="text" placeholder="Email" id="email" required name="entry.780022339">
+                </div>
+                <div>
+                  <input class="w3-input w3-border" type="text" placeholder="Phone" id="phone" required name="entry.1640669712">
+                </div>
+              <div class="w3-section">
+                  <textarea class="w3-input w3-border" type="text" placeholder="Enter your prayer Request " id="message" required name="entry.71166389"></textarea>
+                </div>
+          
+                <div class="w3-center">
+          
+                <div class="w3-section">
+                  <button class="w3-button" style="width:60%"type="submit">SEND</button>
+                </div>
+              </div>
+              </form>
+          </div>
+        </div>
+              <script type="text/javascript">
+              function validateName() {
+                      var name = document.getElementById('name').value;
+                      if(name.length == 0) {
+                        alert("Name can't be blank") ;
+                        return false;
+          
+                      }
+                      if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
+                        alert("Please enter your correct name") ;//Validation Message
+                        return false;
+                      }
+                      return true;
+                    }
+          
+                    function validatePhone() {
+                      var phone = document.getElementById('phone').value;
+                      if(phone.length == 0) {
+                        alert("Phone number can't be blank") ;//Validation Message
+                        return false;
+                      }
+          
+                      if(!phone.match(/^[0]?[789]\d{9}$/)) {
+                       alert("Please enter a correct phone number") ;//Validation Message
+                       return false;
+                     }
+          
+                     return true;
+          
+                   }
+          
+                   function validateEmail () {
+          
+                    var email = document.getElementById('email').value;
+                    if(email.length == 0) {
+                      alert("Email can't be blank") ;//Validation Message
+                      return false;
+          
+                    }
+          
+                    if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+                      alert("Please enter a correct email address") ;//Validation Message
+                      return false;
+          
+                    }
+          
+                    return true;
+          
+                  }
+                  function validatemessage() {
+                      var name = document.getElementById('message').value;
+                      if(name.length == 0) {
+                        alert("Message can't be blank") ;
+                        return false;
+          
+                      }
+                      return true;
+                  }
+          
+                  function validateForm() {
+                    if (!validateName() || !validatePhone() || !validateEmail() || !validatemessage()){
+          
+                      alert("Your Request not submitted");//Validation Message
+                      return false;
+                    }
+                    else {
+                      submitted=true;
+                      return true;
+                      alert("Your Request submitted");//Validation Message
+                    }
+                  }
+                  </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	  <script src="js/main.js"></script>
+  </body>
+</html>
